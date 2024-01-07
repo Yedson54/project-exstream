@@ -120,6 +120,32 @@ def sufficient_features_space(data: pd.DataFrame, features: List[str]) -> List[s
         raise AttributeError("`data` is not a dataframe")
 
 
+def tsa_tsr_series_split(
+        df: pd.DataFrame,
+        trace_id: str,
+        ano_id: int
+        ) -> Tuple[pd.Series, pd.Series]:
+    """Get annotated time series: TSA (Time Series Anomaly) and 
+    TSR (Time Series Reference) of a given event, characterized by its 
+    `trace_id` and its `ano_id`. 
+
+    Parameters:
+    - df (pd.DataFrame): The DataFrame containing time series data.
+    - trace_id (str): The identifier for the time series.
+    - ano_id (int): The identifier for the anomaly.
+
+    Returns:
+    tuple: A tuple containing two DataFrames - TSA and TSR.
+    """
+    tsa = df[(df['trace_id'] == trace_id)
+             & (df['ano_id'] == ano_id)
+             & (df['period_type'] == 'I_A')]
+    tsr = df[(df['trace_id'] == trace_id)
+             & (df['ano_id'] == ano_id)
+             & (df['period_type'] == 'I_R')]
+    
+    return tsa, tsr
+
 ## Single feature reward (section 4)
 def class_entropy(ts_anomaly: Iterable[float], ts_reference: Iterable[float]) -> float:
     """
@@ -221,9 +247,7 @@ def entropy_based_reward(
     return (class_entropy_value / penalized_segmentation_entropy_value
             if penalized_segmentation_entropy_value != 0 else 0)
 
-Distance = entropy_based_reward(class_entropy(TSA, TSR), 
-                                    penalized_segmentation_entropy(TS))
-print(f"Feature Distance: {Distance}")
+
 
 def single_feature_reward(df, feature, trace_id, ano_id):
     """
@@ -241,7 +265,7 @@ def single_feature_reward(df, feature, trace_id, ano_id):
     
     ts_ano, ts_ref = tsa_tsr_series_split(df, trace_id=trace_id, ano_id=ano_id)
     ts = generate_TS(pd.concat([ts_ano, ts_ref]), feature)
-    ts_class_entropy = class_entropy(tsa, tsr)
+    ts_class_entropy = class_entropy(ts_ano, ts_ref)
     ts_segment_entropy = penalized_segmentation_entropy(ts)
     entropy_based_reward(ts_class_entropy, ts_segment_entropy)
 
@@ -624,7 +648,7 @@ for trace_id, ano_id in anomalies:
     # Calculer l'instabilité
     exp_size = len(explanation_features)
     exp_instability = instability(
-        bursty_input1_df, 
+        anomaly_df[anomaly_df["trace_id"] == trace_id], 
         trace_id=trace_id, 
         ano_id=ano_id, 
         features=features_code

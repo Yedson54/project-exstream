@@ -9,8 +9,6 @@ from itertools import groupby
 from typing import List, Dict, Tuple, Optional, Literal, Union, Iterable
 import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
 from scipy.stats import entropy
 from sklearn.cluster import AgglomerativeClustering
 from sklearn.tree import DecisionTreeClassifier
@@ -21,7 +19,7 @@ warnings.filterwarnings(action="ignore")
 
 
 # Get files
-DATAPATH =  "./data/custom_no_streaming_8/folder_1"
+DATAPATH =  "../data/custom_no_streaming_8/folder_1"
 files = glob.glob(rf"{DATAPATH}/*")
 files
 
