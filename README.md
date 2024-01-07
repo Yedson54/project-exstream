@@ -10,8 +10,8 @@ This project focuses on implementing an anomaly explainability method named "EXS
 
 The project archive includes:
 
-- **src/ :** Contains the source code for the EXStream anomaly explainability method.
-- **data/ :** Sample datasets for testing and development.
+- **src/ :** Contains the source code for our implementation of the EXStream anomaly explainability method.
+- **data/ :** Sample datasets used for testing.
 - **notebooks/ :** Notebooks outputing the results.
 
 ### Main Functions
