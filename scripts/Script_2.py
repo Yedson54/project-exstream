@@ -4,7 +4,6 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-from itertools import groupby
 
 
 # Get files
@@ -244,4 +243,4 @@ results_df = pd.DataFrame(results_list)
 final_results = pd.merge(results_to_fill.drop(['ano_start', 'ano_end'], axis=1), results_df, on='trace_id', how='inner')
 
 
-results_df.to_csv('../data/custom_no_streaming_8/folder_2_results.csv')
+results_df.to_csv('../results/folder_2_results.csv')

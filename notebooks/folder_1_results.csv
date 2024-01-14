@@ -5,26 +5,26 @@ trace_id,ano_id,exp_size,exp_instability,explanation
 1_1,3,3,-0.0,"feature_2, feature_1, feature_6"
 1_1,4,3,1.1488348542809166,"feature_0, feature_1, feature_6"
 1_1,5,3,1.4355205042826666,"feature_4, feature_1, feature_6"
-1_2,0,2,-0.0,"feature_2, feature_1"
-1_2,1,3,-0.0,"feature_2, feature_1, feature_4"
-1_2,2,2,-0.0,"feature_0, feature_1"
-1_2,3,2,-0.0,"feature_2, feature_1"
-1_2,4,3,-0.0,"feature_0, feature_1, feature_2"
-2_1,0,1,-0.0,feature_7
+1_2,0,2,0.863120568566631,"feature_2, feature_1"
+1_2,1,3,1.760495029766198,"feature_2, feature_1, feature_4"
+1_2,2,2,1.4854752972273344,"feature_0, feature_1"
+1_2,3,2,0.863120568566631,"feature_2, feature_1"
+1_2,4,3,1.854285871987246,"feature_0, feature_1, feature_2"
+2_1,0,1,0.7219280948873623,feature_7
 2_1,1,1,-0.0,feature_6
-2_1,2,1,-0.0,feature_7
-2_1,3,1,-0.0,feature_6
-2_2,0,2,-0.0,"feature_7, feature_6"
-2_2,1,1,-0.0,feature_3
-2_2,2,2,-0.0,"feature_7, feature_6"
-2_2,3,1,-0.0,feature_0
-3_1,0,4,-0.0,"feature_4, feature_2, feature_6, feature_1"
-3_1,1,4,-0.0,"feature_7, feature_2, feature_1, feature_6"
-3_1,2,4,-0.0,"feature_4, feature_6, feature_2, feature_1"
-3_1,3,4,-0.0,"feature_4, feature_6, feature_2, feature_1"
-3_1,4,4,-0.0,"feature_4, feature_3, feature_2, feature_1"
-3_2,0,3,-0.0,"feature_6, feature_2, feature_1"
-3_2,1,3,-0.0,"feature_6, feature_2, feature_1"
-3_2,2,4,-0.0,"feature_7, feature_1, feature_6, feature_2"
-3_2,3,4,-0.0,"feature_7, feature_6, feature_1, feature_2"
-3_2,4,4,-0.0,"feature_4, feature_3, feature_2, feature_1"
+2_1,2,1,0.7219280948873623,feature_7
+2_1,3,1,1.4056390622295665,feature_6
+2_2,0,2,1.3516441151533922,"feature_7, feature_6"
+2_2,1,1,0.863120568566631,feature_3
+2_2,2,2,1.0,"feature_7, feature_6"
+2_2,3,1,0.7219280948873623,feature_0
+3_1,0,4,2.242737648613667,"feature_4, feature_2, feature_6, feature_1"
+3_1,1,4,2.0,"feature_7, feature_2, feature_1, feature_6"
+3_1,2,4,2.1804820237218405,"feature_4, feature_6, feature_2, feature_1"
+3_1,3,4,2.0,"feature_4, feature_6, feature_2, feature_1"
+3_1,4,4,2.0,"feature_4, feature_3, feature_2, feature_1"
+3_2,0,3,1.5487949406953985,"feature_6, feature_2, feature_1"
+3_2,1,3,1.584962500721156,"feature_6, feature_2, feature_1"
+3_2,2,4,1.9937737543219836,"feature_7, feature_1, feature_6, feature_2"
+3_2,3,4,1.9937737543219836,"feature_7, feature_6, feature_1, feature_2"
+3_2,4,4,2.360964047443681,"feature_4, feature_3, feature_2, feature_1"

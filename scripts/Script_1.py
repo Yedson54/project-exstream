@@ -667,4 +667,4 @@ for trace_id, ano_id in anomalies:
 results_df = pd.DataFrame(results_list)
 
 # Exporter en CSV
-results_df.to_csv('folder_1_results.csv', index=False)
+results_df.to_csv('../data/custom_no_streaming_8/folder_1_results.csv', index=False)
